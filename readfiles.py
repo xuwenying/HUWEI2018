@@ -7,7 +7,7 @@ sys.setdefaultencoding('utf8')
 
 
 
-def openfiles(filename):
+def openfile1(filename):
     f = open(filename, 'r')
     line = f.read()
     # print line
@@ -28,9 +28,23 @@ def openfiles(filename):
 
     f.close()
 
+def openfile2(filename):
+    f = open(filename, 'r')
+    line = f.read()
+    # print line
+    xx = line.split('\n')
+    # print (xx[1].split(' '))
+    for i in range(len(xx)):
+        print '虚拟机ID',xx[i].split('\t')[0]
+        print '虚拟机规格名称', xx[i].split('\t')[1]
+        print '创建时间', xx[i].split('\t')[2]
+
+
 if __name__ == '__main__':
-    filenames = 'input_5flavors_cpu_7days.txt'
-    openfiles(filenames)
+    filename1 = 'input_5flavors_cpu_7days.txt'
+    openfile1(filename1)
+    filename2 = 'TrainData_2015.1.1_2015.2.19.txt'
+    openfile2(filename2)
 
 
 
